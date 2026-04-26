@@ -5,8 +5,8 @@ services:
     restart: always
     volumes:
      - mongo-data:/data/db
-  networks:
-    - app-net
+    networks:
+      - app-net
 
   app:
     build: .
