@@ -23,8 +23,8 @@ services:
     networks:
       - app-net
 
-    volumes:
+volumes:
   mongo-data:
 
-    networks:
-    app-net:
+networks:
+app-net:
