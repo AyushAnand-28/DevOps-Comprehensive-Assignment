@@ -15,7 +15,6 @@ services:
     ports:
       - "80:5000"
   environment:
-    
     depends_on:
       - mongo
     networks:
