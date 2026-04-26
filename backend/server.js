@@ -17,6 +17,14 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 
+// Serve compiled React frontend from /public
+app.use(express.static(path.join(__dirname, "public")));
+
+// SPA fallback — anything that's NOT /api goes to index.html
+app.get(/^(?!\/api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
