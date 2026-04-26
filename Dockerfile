@@ -1,4 +1,3 @@
-# ---------- Stage 1: build the React frontend ----------
 FROM node:20-alpine AS frontend-builder
 WORKDIR /app
 COPY frontend/package*.json ./
@@ -6,7 +5,7 @@ RUN npm install
 COPY frontend/ ./
 RUN npm run build
 
-# ---------- Stage 2: backend that also serves the static frontend ----------
+
 FROM node:20-alpine
 WORKDIR /app
 COPY backend/package*.json ./
