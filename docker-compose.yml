@@ -25,4 +25,4 @@ volumes:
   mongo-data:
 
 networks:
-app-net:
+  app-net:
